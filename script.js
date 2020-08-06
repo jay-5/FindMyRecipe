@@ -1,7 +1,9 @@
+
+// Search bar is added to enter queries
 let search = document.querySelector("#search")
 
 // The event listener will send an API request when clicked
-search.addEventListener("click", ()=>{
+search.addEventListener("click", () => {
     console.log("button was pressed")
     sendAPIRequest()
 })
