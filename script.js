@@ -14,7 +14,7 @@ async function sendAPIRequest(){
     console.log(response)
     let data = await response.json()
     console.log(data)
-    useData(data) 
+    useData(data)
 }
 
 // Displays data from API on cards
