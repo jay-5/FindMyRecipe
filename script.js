@@ -3,36 +3,21 @@
 let search = document.querySelector("#search")
 
 // The event listener will send an API request when clicked
-//search.addEventListener("click", () => {
-  //console.log("button was pressed")
-    //sendAPIRequest()
-//})
+search.addEventListener("click", () => {
+  console.log("button was pressed")
+    sendAPIRequest()
+})
 
 // Fetches API data
 async function sendAPIRequest(){
     let APP_ID = "f8177942"
     let API_KEY = "f302c4ff0068237963ce94d618251817"
-    let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=pasta`);
+    let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=input`);
     console.log(response)
     let data = await response.json()
     console.log(data)
     useData(data)
 }
-
-let url = "https://api.edamam.com/search.json?api-key=f302c4ff0068237963ce94d6182518"
-let recipes = document.getElementById("recipies");
-fetch(url).then(response => response.json()).then(data => {
-
-    data.results.map(recipe => {
-        let a = document.createElement('a');
-        a.setAttribute('href', recipe.url);
-        a.innerHTML = recipe.title;
-        headlines.appendChild(a);
-
-    })
-})
-
-
 
 // Displays data from API on cards
 function useData(data){
